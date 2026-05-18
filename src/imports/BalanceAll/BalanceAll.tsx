@@ -961,6 +961,7 @@ function Tabs2() {
 }
 
 function TopNavbarTab() {
+  const navigate = useNavigate();
   return (
     <div className="content-stretch drop-shadow-[0px_2px_4px_rgba(85,96,113,0.1)] flex flex-col items-start sticky top-0 w-full z-10" data-name="Top navbar & tab">
       <div className="bg-white content-stretch flex flex-col h-[76px] items-start pb-[8px] pt-[28px] shrink-0 w-full" data-name="navbar">
@@ -971,18 +972,18 @@ function TopNavbarTab() {
           <Tabs />
           <div className="bg-[#008a0d] h-[2px] relative shrink-0 w-full" data-name="line" />
         </div>
-        <div className="flex-[1_0_0] min-w-px relative" data-name="2">
+        <div className="flex-[1_0_0] h-[44px] min-w-px relative" data-name="2">
           <div className="flex flex-row items-center justify-center size-full">
-            <div className="content-stretch flex items-center justify-center px-[8px] py-[12px] relative size-full">
+            <button onClick={() => navigate("/finance/all/penjualan", { replace: true })} className="content-stretch cursor-pointer flex items-center justify-center px-[8px] py-[12px] relative size-full">
               <Tabs1 />
-            </div>
+            </button>
           </div>
         </div>
         <div className="flex-[1_0_0] h-[44px] min-w-px relative" data-name="3">
           <div className="flex flex-row items-center justify-center size-full">
-            <div className="content-stretch flex items-center justify-center px-[8px] py-[12px] relative size-full">
+            <button onClick={() => navigate("/finance/all/transaksi", { replace: true })} className="content-stretch cursor-pointer flex items-center justify-center px-[8px] py-[12px] relative size-full">
               <Tabs2 />
-            </div>
+            </button>
           </div>
         </div>
       </div>

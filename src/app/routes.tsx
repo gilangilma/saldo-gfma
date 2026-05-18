@@ -9,6 +9,8 @@ import PenjualanGofood from "../imports/PenjualanGofood/PenjualanGofood";
 import TransactionGoFood from "../imports/TransactionGoFood/TransactionGoFood";
 import PenjualanQris from "../imports/PenjualanQris/PenjualanQris";
 import TransactionQris from "../imports/TransactionQris/TransactionQris";
+import PenjualanAll from "../imports/PenjualanAll/PenjualanAll";
+import TransactionAll from "../imports/TransactionAll/TransactionAll";
 
 function AndroidPhoneMockup({ children }: { children: React.ReactNode }) {
   return (
@@ -104,6 +106,8 @@ export const router = createBrowserRouter([
       { path: "finance/qris/penjualan", Component: PenjualanQris },
       { path: "finance/qris/transaksi", Component: TransactionQris },
       { path: "finance/all", Component: BalanceAll },
+      { path: "finance/all/penjualan", Component: PenjualanAll },
+      { path: "finance/all/transaksi", Component: TransactionAll },
     ],
   },
 ]);
