@@ -8,16 +8,68 @@ interface KompensasiItem {
   amount: string;
 }
 
-const ITEMS: KompensasiItem[] = [
-  { title: "Kompensasi GoFood", date: "17 Mei 2026, 11:43", amount: "Rp175.000" },
-  { title: "Kompensasi QRIS",   date: "17 Mei 2026, 10:25", amount: "Rp90.000"  },
-  { title: "Kompensasi GoFood", date: "17 Mei 2026, 08:07", amount: "Rp250.000" },
-];
+const ITEMS_BY_PERIOD: Record<string, KompensasiItem[]> = {
+  "Hari ini": [
+    { title: "Kompensasi GoFood", date: "18 Mei 2026, 12:15", amount: "Rp25.000" },
+    { title: "Kompensasi QRIS",   date: "18 Mei 2026, 10:42", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "18 Mei 2026, 08:30", amount: "Rp35.000" },
+  ],
+  "Minggu ini": [
+    { title: "Kompensasi GoFood", date: "18 Mei 2026, 12:15", amount: "Rp25.000" },
+    { title: "Kompensasi QRIS",   date: "18 Mei 2026, 10:42", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "18 Mei 2026, 08:30", amount: "Rp35.000" },
+    { title: "Kompensasi GoFood", date: "17 Mei 2026, 14:20", amount: "Rp20.000" },
+    { title: "Kompensasi QRIS",   date: "16 Mei 2026, 11:05", amount: "Rp30.000" },
+    { title: "Kompensasi GoFood", date: "15 Mei 2026, 13:50", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "13 Mei 2026, 09:18", amount: "Rp45.000" },
+  ],
+  "Minggu lalu": [
+    { title: "Kompensasi GoFood", date: "11 Mei 2026, 13:30", amount: "Rp20.000" },
+    { title: "Kompensasi QRIS",   date: "11 Mei 2026, 10:05", amount: "Rp25.000" },
+    { title: "Kompensasi GoFood", date: "10 Mei 2026, 15:40", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "9 Mei 2026, 12:22",  amount: "Rp50.000" },
+    { title: "Kompensasi QRIS",   date: "8 Mei 2026, 11:48",  amount: "Rp20.000" },
+    { title: "Kompensasi GoFood", date: "7 Mei 2026, 09:33",  amount: "Rp35.000" },
+    { title: "Kompensasi GoFood", date: "5 Mei 2026, 14:10",  amount: "Rp30.000" },
+  ],
+  "Bulan ini": [
+    { title: "Kompensasi GoFood", date: "18 Mei 2026, 12:15", amount: "Rp25.000" },
+    { title: "Kompensasi QRIS",   date: "18 Mei 2026, 10:42", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "17 Mei 2026, 14:20", amount: "Rp20.000" },
+    { title: "Kompensasi QRIS",   date: "16 Mei 2026, 11:05", amount: "Rp30.000" },
+    { title: "Kompensasi GoFood", date: "13 Mei 2026, 09:18", amount: "Rp45.000" },
+    { title: "Kompensasi GoFood", date: "11 Mei 2026, 13:30", amount: "Rp20.000" },
+    { title: "Kompensasi GoFood", date: "9 Mei 2026, 12:22",  amount: "Rp50.000" },
+    { title: "Kompensasi QRIS",   date: "8 Mei 2026, 11:48",  amount: "Rp20.000" },
+    { title: "Kompensasi GoFood", date: "7 Mei 2026, 09:33",  amount: "Rp35.000" },
+    { title: "Kompensasi GoFood", date: "5 Mei 2026, 14:10",  amount: "Rp30.000" },
+    { title: "Kompensasi QRIS",   date: "3 Mei 2026, 10:55",  amount: "Rp25.000" },
+    { title: "Kompensasi GoFood", date: "2 Mei 2026, 13:20",  amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "1 Mei 2026, 09:45",  amount: "Rp40.000" },
+  ],
+  "Bulan lalu": [
+    { title: "Kompensasi GoFood", date: "30 Apr 2026, 14:10", amount: "Rp20.000" },
+    { title: "Kompensasi QRIS",   date: "28 Apr 2026, 11:35", amount: "Rp25.000" },
+    { title: "Kompensasi GoFood", date: "26 Apr 2026, 13:05", amount: "Rp35.000" },
+    { title: "Kompensasi GoFood", date: "24 Apr 2026, 09:50", amount: "Rp15.000" },
+    { title: "Kompensasi QRIS",   date: "22 Apr 2026, 12:30", amount: "Rp30.000" },
+    { title: "Kompensasi GoFood", date: "20 Apr 2026, 10:15", amount: "Rp50.000" },
+    { title: "Kompensasi GoFood", date: "18 Apr 2026, 14:45", amount: "Rp20.000" },
+    { title: "Kompensasi QRIS",   date: "15 Apr 2026, 11:22", amount: "Rp15.000" },
+    { title: "Kompensasi GoFood", date: "12 Apr 2026, 09:40", amount: "Rp45.000" },
+    { title: "Kompensasi GoFood", date: "10 Apr 2026, 13:18", amount: "Rp25.000" },
+    { title: "Kompensasi QRIS",   date: "7 Apr 2026, 10:55",  amount: "Rp20.000" },
+    { title: "Kompensasi GoFood", date: "5 Apr 2026, 12:30",  amount: "Rp35.000" },
+    { title: "Kompensasi GoFood", date: "3 Apr 2026, 09:10",  amount: "Rp30.000" },
+    { title: "Kompensasi QRIS",   date: "1 Apr 2026, 14:00",  amount: "Rp15.000" },
+  ],
+};
 
 function ChevronRight() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path clipRule="evenodd" fillRule="evenodd"
+      <path
+        clipRule="evenodd" fillRule="evenodd"
         d="M6 3.5L10.5 8L6 12.5"
         stroke="#4C4C4C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
       />
@@ -31,6 +83,7 @@ interface Props {
 
 export default function RiwayatKompensasiTray({ onClose }: Props) {
   const [activePeriod, setActivePeriod] = useState("Hari ini");
+  const items = ITEMS_BY_PERIOD[activePeriod];
 
   return (
     <div className="absolute inset-0 z-50 flex flex-col justify-end" style={{ borderRadius: "inherit" }}>
@@ -80,7 +133,7 @@ export default function RiwayatKompensasiTray({ onClose }: Props) {
 
         {/* Compensation list */}
         <div className="overflow-y-auto flex-1 pb-6 no-scrollbar" style={{ scrollbarWidth: "none" }}>
-          {ITEMS.map((item, i) => (
+          {items.map((item, i) => (
             <div key={i}>
               <button className="flex items-center justify-between w-full px-4 py-[16px] text-left bg-transparent border-none cursor-pointer">
                 <div className="flex flex-col gap-[2px]">
@@ -98,7 +151,7 @@ export default function RiwayatKompensasiTray({ onClose }: Props) {
                   <ChevronRight />
                 </div>
               </button>
-              {i < ITEMS.length - 1 && <div className="h-px bg-[#e7e7e7] mx-4" />}
+              {i < items.length - 1 && <div className="h-px bg-[#e7e7e7] mx-4" />}
             </div>
           ))}
         </div>
