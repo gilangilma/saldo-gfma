@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import svgPaths from "../PenjualanGofood/svg-yru8xw8akx";
+import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 
 function SemuaIcon() {
   return (
@@ -40,13 +42,13 @@ function BackIcon() {
   );
 }
 
-function SemuaChip({ onOpenTray }: { onOpenTray?: () => void }) {
+function SemuaChip({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
+    <button onClick={onOpenTray} className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
       <SemuaIcon />
       <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">Semua</p>
       <ChevronDown />
-    </div>
+    </button>
   );
 }
 
@@ -68,14 +70,14 @@ function CollapseBtn() {
   );
 }
 
-function SummaryCard() {
+function SummaryCard({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="bg-[#e0ffe0] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#00880d] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <div className="relative shrink-0 w-full">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-between pb-[12px] pt-[16px] px-[12px] relative size-full">
-            <SemuaChip />
+            <SemuaChip onOpenTray={onOpenTray} />
             <PeriodChip />
           </div>
         </div>
@@ -218,10 +220,10 @@ function RincianBiaya() {
   );
 }
 
-function MainContent() {
+function MainContent({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full">
-      <SummaryCard />
+      <SummaryCard onOpenTray={onOpenTray} />
       <RincianPenjualan />
       <RincianBiaya />
     </div>
@@ -289,12 +291,14 @@ function TopNavbarTab() {
 }
 
 export default function PenjualanAll() {
+  const [showTray, setShowTray] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <MainContent />
+        <MainContent onOpenTray={() => setShowTray(true)} />
       </div>
+      {showTray && <PilihSaldoTray selected="semua" onClose={() => setShowTray(false)} />}
     </div>
   );
 }

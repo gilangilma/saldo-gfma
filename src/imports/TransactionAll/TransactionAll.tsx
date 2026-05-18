@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import svgPaths from "../TransactionGoFood/svg-i8v0h32p5p";
+import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 
 function SemuaIcon() {
   return (
@@ -205,7 +207,7 @@ function TransactionList() {
   );
 }
 
-function Filters() {
+function Filters({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="content-stretch flex flex-col items-start p-[16px] w-full">
       <div className="bg-[#e0ffe0] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
@@ -213,13 +215,13 @@ function Filters() {
         <div className="relative shrink-0 w-full">
           <div className="flex flex-row items-center justify-center size-full">
             <div className="content-stretch flex items-center justify-between pb-[12px] pt-[16px] px-[12px] relative size-full">
-              <div className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
+              <button onClick={onOpenTray} className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
                 <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0">
                   <SemuaIcon />
                 </div>
                 <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">Semua</p>
                 <ChevronDown />
-              </div>
+              </button>
               <div className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
                 <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">Hari ini</p>
                 <ChevronDown />
@@ -305,13 +307,15 @@ function TopNavbarTab() {
 }
 
 export default function TransactionAll() {
+  const [showTray, setShowTray] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Filters />
+        <Filters onOpenTray={() => setShowTray(true)} />
         <TransactionList />
       </div>
+      {showTray && <PilihSaldoTray selected="semua" onClose={() => setShowTray(false)} />}
     </div>
   );
 }

@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import svgPaths from "./svg-5pw8ia0ors";
+import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 
 function Icon() {
   return (
@@ -27,9 +29,9 @@ function Icon1() {
   );
 }
 
-function Frame4() {
+function Frame4({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#a6e8ff] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
+    <button onClick={onOpenTray} className="bg-[#a6e8ff] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="payments/16/ic_wallet">
         <Icon />
       </div>
@@ -37,7 +39,7 @@ function Frame4() {
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/16/ic_expand_more">
         <Icon1 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -65,12 +67,12 @@ function Frame5() {
   );
 }
 
-function Frame3() {
+function Frame3({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-between pb-[12px] pt-[16px] px-[12px] relative size-full">
-          <Frame4 />
+          <Frame4 onOpenTray={onOpenTray} />
           <Frame5 />
         </div>
       </div>
@@ -123,20 +125,20 @@ function Frame2() {
   );
 }
 
-function Frame1() {
+function Frame1({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="bg-[#d6f7ff] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
       <div aria-hidden="true" className="absolute border border-[#0081a0] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
-      <Frame3 />
+      <Frame3 onOpenTray={onOpenTray} />
       <Frame2 />
     </div>
   );
 }
 
-function Filters() {
+function Filters({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="content-stretch flex flex-col items-start p-[16px] w-full" data-name="Filters">
-      <Frame1 />
+      <Frame1 onOpenTray={onOpenTray} />
     </div>
   );
 }
@@ -1273,13 +1275,15 @@ function TopNavbarTab() {
 }
 
 export default function TransactionQris() {
+  const [showTray, setShowTray] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Filters />
+        <Filters onOpenTray={() => setShowTray(true)} />
         <TransactionList />
       </div>
+      {showTray && <PilihSaldoTray selected="qris" onClose={() => setShowTray(false)} />}
     </div>
   );
 }
