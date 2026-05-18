@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { SALDO_GOFOOD, SALDO_QRIS, SALDO_TOTAL, formatRp } from "../../data/saldo";
 import { useNavigate } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import svgPaths from "./svg-w9q5xzqbo7";
@@ -21,7 +22,7 @@ function Amount() {
   const navigate = useNavigate();
   return (
     <button onClick={() => navigate("/finance/all")} className="content-stretch cursor-pointer flex gap-[4px] items-center relative shrink-0" data-name="Amount">
-      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[36px] not-italic relative shrink-0 text-[#1c1d1d] text-[24px] whitespace-nowrap">Rp3.600.000</p>
+      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[36px] not-italic relative shrink-0 text-[#1c1d1d] text-[24px] whitespace-nowrap">{formatRp(SALDO_TOTAL)}</p>
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/24/ic_next_ios">
         <Icon />
       </div>
@@ -79,7 +80,7 @@ function Frame20() {
 function Frame24() {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">Rp2.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">{formatRp(SALDO_GOFOOD)}</p>
     </div>
   );
 }
@@ -223,7 +224,7 @@ function Frame21() {
 function Frame25() {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">Rp600.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">{formatRp(SALDO_QRIS)}</p>
     </div>
   );
 }

@@ -6,6 +6,8 @@ import svgPaths from "./svg-ftk39hk4ad";
 const IC_HIDE_PATH = "M13.4697 2.862C13.7303 3.12267 13.7303 3.544 13.4697 3.80467L12.3463 4.92762C13.1974 5.60117 13.9465 6.47279 14.5384 7.5202C14.7051 7.81287 14.7051 8.17954 14.5384 8.47954C13.0584 11.1002 10.6117 12.6669 7.99841 12.6669C7.03747 12.6669 6.10255 12.4489 5.22872 12.0469L3.46968 13.8047C3.33968 13.9347 3.16901 14 2.99834 14C2.82768 14 2.65701 13.9347 2.52701 13.8047C2.26634 13.544 2.26634 13.1227 2.52701 12.862L4.03268 11.3558L4.02708 11.3522L5.59015 9.78934C6.13696 10.5241 7.01207 11 7.99834 11C9.6552 11 10.9983 9.65686 10.9983 8C10.9983 7.01373 10.5224 6.13862 9.78768 5.59181L11.2044 4.17487L11.2111 4.17849V4.17849L12.527 2.862C12.7877 2.60134 13.209 2.60134 13.4697 2.862ZM7.99834 3.33334C8.54863 3.33334 9.09157 3.40485 9.6196 3.53947L9.88234 3.612L8.45918 5.03518C8.30895 5.01202 8.15505 5 7.99834 5C6.34149 5 4.99834 6.34315 4.99834 8C4.99834 8.15664 5.01035 8.31047 5.03349 8.46063L3.00168 10.492C2.41968 9.91667 1.89368 9.25 1.45834 8.48C1.29168 8.18667 1.29168 7.82 1.45834 7.52C2.19834 6.21334 3.17834 5.16 4.30501 4.44667C5.42501 3.72667 6.69168 3.33334 7.99834 3.33334ZM9.66501 8C9.66501 8.92048 8.91882 9.66667 7.99834 9.66667C7.37911 9.66667 6.83876 9.32897 6.5514 8.8277L8.82591 6.55299C9.32726 6.84033 9.66501 7.38072 9.66501 8Z";
 const IC_VIEWS_PATH = "M7.99972 3.3335C10.6591 3.3335 13.0777 4.92899 14.5424 7.52258C14.7082 7.81789 14.7081 8.18111 14.5416 8.47793C13.0777 11.0707 10.6591 12.6668 7.99972 12.6668C5.34109 12.6668 2.9225 11.0708 1.45767 8.47707C1.29196 8.18177 1.29196 7.81855 1.45853 7.52173C2.92222 4.92927 5.34073 3.3335 7.99972 3.3335ZM7.99999 4.9999C6.34313 4.9999 4.99999 6.34304 4.99999 7.9999C4.99999 9.65675 6.34313 10.9999 7.99999 10.9999C9.65685 10.9999 11 9.65675 11 7.9999C11 6.34304 9.65685 4.9999 7.99999 4.9999ZM7.99999 6.33323C8.92047 6.33323 9.66666 7.07942 9.66666 7.9999C9.66666 8.92037 8.92047 9.66656 7.99999 9.66656C7.07951 9.66656 6.33332 8.92037 6.33332 7.9999C6.33332 7.87044 6.34808 7.74442 6.37629 7.62377C6.46817 7.6516 6.56565 7.66656 6.66666 7.66656C7.21932 7.66656 7.66666 7.21856 7.66666 6.66656C7.66666 6.56568 7.65171 6.46827 7.62354 6.37592C7.74452 6.34799 7.87053 6.33323 7.99999 6.33323Z";
 
+import { SALDO_GOFOOD, SALDO_QRIS, SALDO_TOTAL, formatRp } from "../../data/saldo";
+
 const BalanceContext = createContext<{ visible: boolean; toggle: () => void }>({
   visible: true,
   toggle: () => {},
@@ -347,7 +349,7 @@ function Frame51() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1c1d1d] text-[14px] whitespace-nowrap">
-        {visible ? "Rp3.600.000" : "Rp••••••"}
+        {visible ? formatRp(SALDO_TOTAL) : "Rp••••••"}
       </p>
       <button
         onClick={toggle}
@@ -403,7 +405,7 @@ function Frame49() {
   return (
     <div className="content-stretch flex items-start relative shrink-0">
       <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">
-        {visible ? "Saldo: Rp2.000.000" : "Saldo: Rp••••••"}
+        {visible ? `Saldo: ${formatRp(SALDO_GOFOOD)}` : "Saldo: Rp••••••"}
       </p>
     </div>
   );
@@ -577,7 +579,7 @@ function Frame34() {
 function Frame46() {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/finance/gofood")} className="bg-[#f9f9f9] content-stretch cursor-pointer flex flex-col items-start relative rounded-[16px] text-left w-full">
+    <button onClick={() => navigate("/finance/gofood")} className="bg-[#f9f9f9] content-stretch cursor-pointer flex flex-col items-start relative rounded-[16px] text-left" style={{ width: "288px" }}>
       <Frame40 />
       <Frame34 />
     </button>
@@ -603,7 +605,7 @@ function Frame39() {
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px] whitespace-nowrap">
       <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0">Gopay</p>
       <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-right">
-        {visible ? "Saldo: Rp600.000" : "Saldo: Rp••••••"}
+        {visible ? `Saldo: ${formatRp(SALDO_QRIS)}` : "Saldo: Rp••••••"}
       </p>
     </div>
   );
@@ -768,7 +770,7 @@ function Frame42() {
 function Frame48() {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/finance/qris")} className="bg-[#f9f9f9] content-stretch cursor-pointer flex flex-col items-start relative rounded-[16px] text-left w-full">
+    <button onClick={() => navigate("/finance/qris")} className="bg-[#f9f9f9] content-stretch cursor-pointer flex flex-col items-start relative rounded-[16px] text-left" style={{ width: "288px" }}>
       <Frame41 />
       <Frame42 />
     </button>
@@ -776,7 +778,7 @@ function Frame48() {
 }
 
 function Frame52() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start", containScroll: "trimSnaps" });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
@@ -793,12 +795,12 @@ function Frame52() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full">
       {/* Carousel viewport */}
-      <div ref={emblaRef} style={{ overflow: "hidden", width: "100%" }}>
-        <div style={{ display: "flex", gap: "16px" }}>
-          <div style={{ flex: "0 0 100%" }}>
+      <div ref={emblaRef} style={{ overflow: "hidden", width: "calc(100% + 32px)", marginLeft: "-16px", marginRight: "-16px" }}>
+        <div style={{ display: "flex", gap: "16px", paddingLeft: "16px" }}>
+          <div style={{ flex: "0 0 288px", maxWidth: "288px" }}>
             <Frame46 />
           </div>
-          <div style={{ flex: "0 0 100%" }}>
+          <div style={{ flex: "0 0 288px", maxWidth: "288px", marginRight: "16px" }}>
             <Frame48 />
           </div>
         </div>
