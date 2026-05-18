@@ -976,7 +976,7 @@ export default function BalanceGoFood() {
         <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="gofood" onClose={() => setShowTray(false)} />}
-      {showKompensasi && <RiwayatKompensasiTray onClose={() => setShowKompensasi(false)} />}
+      {showKompensasi && <RiwayatKompensasiTray type="gofood" onClose={() => setShowKompensasi(false)} />}
     </div>
   );
 }

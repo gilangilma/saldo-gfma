@@ -965,7 +965,7 @@ export default function BalanceQris() {
         <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="qris" onClose={() => setShowTray(false)} />}
-      {showKompensasi && <RiwayatKompensasiTray onClose={() => setShowKompensasi(false)} />}
+      {showKompensasi && <RiwayatKompensasiTray type="qris" onClose={() => setShowKompensasi(false)} />}
     </div>
   );
 }

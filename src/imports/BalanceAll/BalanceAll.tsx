@@ -1004,7 +1004,7 @@ export default function BalanceAll() {
         <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="semua" onClose={() => setShowTray(false)} />}
-      {showKompensasi && <RiwayatKompensasiTray onClose={() => setShowKompensasi(false)} />}
+      {showKompensasi && <RiwayatKompensasiTray type="semua" onClose={() => setShowKompensasi(false)} />}
     </div>
   );
 }
