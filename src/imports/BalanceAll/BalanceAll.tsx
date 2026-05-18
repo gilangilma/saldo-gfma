@@ -4,6 +4,7 @@ import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import RiwayatKompensasiTray from "../../app/components/RiwayatKompensasiTray";
 import RiwayatPemotonganTray from "../../app/components/RiwayatPemotonganTray";
 import RiwayatPencairanTray from "../../app/components/RiwayatPencairanTray";
+import DetailPencairanOverlay, { ALL_ITEMS, type PayoutItem } from "../../app/components/DetailPencairanOverlay";
 import svgPaths from "./svg-5am4megexx";
 
 function Icon() {
@@ -435,7 +436,7 @@ function Frame23() {
 function Frame27() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-end relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp3.200.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp700.000</p>
       <div className="bg-[#e1ffdf] content-stretch flex flex-col items-start justify-center px-[4px] relative rounded-[8px] shrink-0" data-name="badge/ribbon/patch">
         <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[12px] whitespace-nowrap">Sukses</p>
       </div>
@@ -476,14 +477,14 @@ function Frame24() {
   );
 }
 
-function Frame9() {
+function Frame9({ onClick }: { onClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onClick} className="relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="content-stretch flex gap-[16px] items-start px-[12px] py-[16px] relative size-full">
         <Frame23 />
         <Frame24 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -499,7 +500,7 @@ function Frame28() {
 function Frame31() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-end relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp2.870.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp580.000</p>
       <div className="bg-[#e1ffdf] content-stretch flex flex-col items-start justify-center px-[4px] relative rounded-[8px] shrink-0" data-name="badge/ribbon/patch">
         <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[12px] whitespace-nowrap">Sukses</p>
       </div>
@@ -540,14 +541,14 @@ function Frame30() {
   );
 }
 
-function Frame10() {
+function Frame10({ onClick }: { onClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onClick} className="relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="content-stretch flex gap-[16px] items-start px-[12px] py-[16px] relative size-full">
         <Frame28 />
         <Frame30 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -563,7 +564,7 @@ function Frame32() {
 function Frame34() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-end relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp2.700.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp530.000</p>
       <div className="bg-[#e1ffdf] content-stretch flex flex-col items-start justify-center px-[4px] relative rounded-[8px] shrink-0" data-name="badge/ribbon/patch">
         <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[12px] whitespace-nowrap">Sukses</p>
       </div>
@@ -604,14 +605,14 @@ function Frame33() {
   );
 }
 
-function Frame11() {
+function Frame11({ onClick }: { onClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onClick} className="relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="content-stretch flex gap-[16px] items-start px-[12px] py-[16px] relative size-full">
         <Frame32 />
         <Frame33 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -627,7 +628,7 @@ function Frame35() {
 function Frame37() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-end relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp3.500.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp750.000</p>
       <div className="bg-[#e1ffdf] content-stretch flex flex-col items-start justify-center px-[4px] relative rounded-[8px] shrink-0" data-name="badge/ribbon/patch">
         <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[12px] whitespace-nowrap">Sukses</p>
       </div>
@@ -668,14 +669,14 @@ function Frame36() {
   );
 }
 
-function Frame12() {
+function Frame12({ onClick }: { onClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onClick} className="relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="content-stretch flex gap-[16px] items-start px-[12px] py-[16px] relative size-full">
         <Frame35 />
         <Frame36 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -691,7 +692,7 @@ function Frame38() {
 function Frame40() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-end relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp4.000.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp840.000</p>
       <div className="bg-[#e1ffdf] content-stretch flex flex-col items-start justify-center px-[4px] relative rounded-[8px] shrink-0" data-name="badge/ribbon/patch">
         <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[12px] whitespace-nowrap">Sukses</p>
       </div>
@@ -732,14 +733,14 @@ function Frame39() {
   );
 }
 
-function Frame13() {
+function Frame13({ onClick }: { onClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onClick} className="relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="content-stretch flex gap-[16px] items-start px-[12px] py-[16px] relative size-full">
         <Frame38 />
         <Frame39 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -760,7 +761,7 @@ function Frame41({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   );
 }
 
-function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
+function Frame20({ onOpenPencairan, onOpenDetail }: { onOpenPencairan: () => void; onOpenDetail: (item: PayoutItem) => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
@@ -772,7 +773,7 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
           </svg>
         </div>
       </div>
-      <Frame9 />
+      <Frame9 onClick={() => onOpenDetail(ALL_ITEMS[0])} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -786,7 +787,7 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
           </div>
         </div>
       </div>
-      <Frame10 />
+      <Frame10 onClick={() => onOpenDetail(ALL_ITEMS[1])} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -800,7 +801,7 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
           </div>
         </div>
       </div>
-      <Frame11 />
+      <Frame11 onClick={() => onOpenDetail(ALL_ITEMS[2])} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -814,7 +815,7 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
           </div>
         </div>
       </div>
-      <Frame12 />
+      <Frame12 onClick={() => onOpenDetail(ALL_ITEMS[3])} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -828,7 +829,7 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
           </div>
         </div>
       </div>
-      <Frame13 />
+      <Frame13 onClick={() => onOpenDetail(ALL_ITEMS[4])} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -847,12 +848,12 @@ function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   );
 }
 
-function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan, onOpenPencairan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void; onOpenPencairan: () => void }) {
+function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan, onOpenPencairan, onOpenDetail }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void; onOpenPencairan: () => void; onOpenDetail: (item: PayoutItem) => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full" data-name="Top">
       <Frame25 onOpenTray={onOpenTray} />
       <Frame15 onOpenKompensasi={onOpenKompensasi} onOpenPemotongan={onOpenPemotongan} />
-      <Frame20 onOpenPencairan={onOpenPencairan} />
+      <Frame20 onOpenPencairan={onOpenPencairan} onOpenDetail={onOpenDetail} />
     </div>
   );
 }
@@ -1000,16 +1001,18 @@ export default function BalanceAll() {
   const [showKompensasi, setShowKompensasi] = useState(false);
   const [showPemotongan, setShowPemotongan] = useState(false);
   const [showPencairan, setShowPencairan] = useState(false);
+  const [selectedPayout, setSelectedPayout] = useState<PayoutItem | null>(null);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} onOpenPencairan={() => setShowPencairan(true)} />
+        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} onOpenPencairan={() => setShowPencairan(true)} onOpenDetail={(item) => setSelectedPayout(item)} />
       </div>
       {showTray && <PilihSaldoTray selected="semua" onClose={() => setShowTray(false)} />}
       {showKompensasi && <RiwayatKompensasiTray type="semua" onClose={() => setShowKompensasi(false)} />}
       {showPemotongan && <RiwayatPemotonganTray type="semua" onClose={() => setShowPemotongan(false)} />}
       {showPencairan && <RiwayatPencairanTray type="semua" onClose={() => setShowPencairan(false)} />}
+      {selectedPayout && <DetailPencairanOverlay type="semua" item={selectedPayout} onClose={() => setSelectedPayout(null)} />}
     </div>
   );
 }
