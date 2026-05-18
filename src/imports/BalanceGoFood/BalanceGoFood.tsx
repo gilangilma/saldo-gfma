@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import svgPaths from "./svg-ewyz4of39d";
 import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import RiwayatKompensasiTray from "../../app/components/RiwayatKompensasiTray";
+import RiwayatPemotonganTray from "../../app/components/RiwayatPemotonganTray";
 
 function Icon() {
   return (
@@ -268,16 +269,16 @@ function Frame19() {
   );
 }
 
-function Frame6() {
+function Frame6({ onOpenPemotongan }: { onOpenPemotongan: () => void }) {
   return (
-    <div className="relative shrink-0 w-full">
+    <button onClick={onOpenPemotongan} className="cursor-pointer relative shrink-0 w-full bg-transparent border-none p-0 text-left">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-between px-[12px] py-[16px] relative size-full">
           <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] whitespace-nowrap">Pemotongan</p>
           <Frame19 />
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -308,7 +309,7 @@ function Frame9() {
   );
 }
 
-function Frame16({ onOpenKompensasi }: { onOpenKompensasi: () => void }) {
+function Frame16({ onOpenKompensasi, onOpenPemotongan }: { onOpenKompensasi: () => void; onOpenPemotongan: () => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
@@ -362,7 +363,7 @@ function Frame16({ onOpenKompensasi }: { onOpenKompensasi: () => void }) {
           </div>
         </div>
       </div>
-      <Frame6 />
+      <Frame6 onOpenPemotongan={onOpenPemotongan} />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
@@ -818,11 +819,11 @@ function Frame28() {
   );
 }
 
-function Top({ onOpenTray, onOpenKompensasi }: { onOpenTray: () => void; onOpenKompensasi: () => void }) {
+function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full" data-name="Top">
       <Frame26 onOpenTray={onOpenTray} />
-      <Frame16 onOpenKompensasi={onOpenKompensasi} />
+      <Frame16 onOpenKompensasi={onOpenKompensasi} onOpenPemotongan={onOpenPemotongan} />
       <Frame28 />
     </div>
   );
@@ -969,14 +970,16 @@ function TopNavbarTab() {
 export default function BalanceGoFood() {
   const [showTray, setShowTray] = useState(false);
   const [showKompensasi, setShowKompensasi] = useState(false);
+  const [showPemotongan, setShowPemotongan] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden" data-name="Balance/GoFood">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} />
+        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="gofood" onClose={() => setShowTray(false)} />}
       {showKompensasi && <RiwayatKompensasiTray type="gofood" onClose={() => setShowKompensasi(false)} />}
+      {showPemotongan && <RiwayatPemotonganTray type="gofood" onClose={() => setShowPemotongan(false)} />}
     </div>
   );
 }
