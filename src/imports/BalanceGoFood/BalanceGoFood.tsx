@@ -4,6 +4,7 @@ import svgPaths from "./svg-ewyz4of39d";
 import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import RiwayatKompensasiTray from "../../app/components/RiwayatKompensasiTray";
 import RiwayatPemotonganTray from "../../app/components/RiwayatPemotonganTray";
+import RiwayatPencairanTray from "../../app/components/RiwayatPencairanTray";
 
 function Icon() {
   return (
@@ -714,13 +715,12 @@ function Frame14() {
   );
 }
 
-function Frame41() {
-  const navigate = useNavigate();
+function Frame41({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row justify-center size-full">
         <div className="content-stretch flex items-start justify-center px-[12px] py-[16px] relative size-full">
-          <button onClick={() => navigate("/finance/all")} className="content-stretch cursor-pointer flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0 bg-transparent border-none" data-name="button/secondary">
+          <button onClick={onOpenPencairan} className="content-stretch cursor-pointer flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0 bg-transparent border-none" data-name="button/secondary">
             <div aria-hidden="true" className="absolute border border-[#008a0d] border-solid inset-0 pointer-events-none rounded-[18px]" />
             <div className="content-stretch flex items-center justify-center relative shrink-0" data-name=".properties/button/label/tiny">
               <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#007c0b] text-[14px] text-center whitespace-nowrap">Lihat riwayat lengkap</p>
@@ -732,7 +732,7 @@ function Frame41() {
   );
 }
 
-function Frame28() {
+function Frame28({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
@@ -814,17 +814,17 @@ function Frame28() {
           </div>
         </div>
       </div>
-      <Frame41 />
+      <Frame41 onOpenPencairan={onOpenPencairan} />
     </div>
   );
 }
 
-function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void }) {
+function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan, onOpenPencairan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void; onOpenPencairan: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full" data-name="Top">
       <Frame26 onOpenTray={onOpenTray} />
       <Frame16 onOpenKompensasi={onOpenKompensasi} onOpenPemotongan={onOpenPemotongan} />
-      <Frame28 />
+      <Frame28 onOpenPencairan={onOpenPencairan} />
     </div>
   );
 }
@@ -971,15 +971,17 @@ export default function BalanceGoFood() {
   const [showTray, setShowTray] = useState(false);
   const [showKompensasi, setShowKompensasi] = useState(false);
   const [showPemotongan, setShowPemotongan] = useState(false);
+  const [showPencairan, setShowPencairan] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden" data-name="Balance/GoFood">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} />
+        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} onOpenPencairan={() => setShowPencairan(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="gofood" onClose={() => setShowTray(false)} />}
       {showKompensasi && <RiwayatKompensasiTray type="gofood" onClose={() => setShowKompensasi(false)} />}
       {showPemotongan && <RiwayatPemotonganTray type="gofood" onClose={() => setShowPemotongan(false)} />}
+      {showPencairan && <RiwayatPencairanTray type="gofood" onClose={() => setShowPencairan(false)} />}
     </div>
   );
 }

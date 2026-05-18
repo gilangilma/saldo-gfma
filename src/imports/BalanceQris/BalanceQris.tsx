@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import RiwayatKompensasiTray from "../../app/components/RiwayatKompensasiTray";
 import RiwayatPemotonganTray from "../../app/components/RiwayatPemotonganTray";
+import RiwayatPencairanTray from "../../app/components/RiwayatPencairanTray";
 import svgPaths from "./svg-e8tufq6w7a";
 
 function Icon() {
@@ -703,13 +704,12 @@ function Frame13() {
   );
 }
 
-function Frame40() {
-  const navigate = useNavigate();
+function Frame40({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row justify-center size-full">
         <div className="content-stretch flex items-start justify-center px-[12px] py-[16px] relative size-full">
-          <button onClick={() => navigate("/finance/all")} className="content-stretch cursor-pointer flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0 bg-transparent border-none" data-name="button/secondary">
+          <button onClick={onOpenPencairan} className="content-stretch cursor-pointer flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0 bg-transparent border-none" data-name="button/secondary">
             <div aria-hidden="true" className="absolute border border-[#008a0d] border-solid inset-0 pointer-events-none rounded-[18px]" />
             <div className="content-stretch flex items-center justify-center relative shrink-0" data-name=".properties/button/label/tiny">
               <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#007c0b] text-[14px] text-center whitespace-nowrap">Lihat riwayat lengkap</p>
@@ -721,7 +721,7 @@ function Frame40() {
   );
 }
 
-function Frame20() {
+function Frame20({ onOpenPencairan }: { onOpenPencairan: () => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
@@ -803,17 +803,17 @@ function Frame20() {
           </div>
         </div>
       </div>
-      <Frame40 />
+      <Frame40 onOpenPencairan={onOpenPencairan} />
     </div>
   );
 }
 
-function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void }) {
+function Top({ onOpenTray, onOpenKompensasi, onOpenPemotongan, onOpenPencairan }: { onOpenTray: () => void; onOpenKompensasi: () => void; onOpenPemotongan: () => void; onOpenPencairan: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full" data-name="Top">
       <Frame25 onOpenTray={onOpenTray} />
       <Frame15 onOpenKompensasi={onOpenKompensasi} onOpenPemotongan={onOpenPemotongan} />
-      <Frame20 />
+      <Frame20 onOpenPencairan={onOpenPencairan} />
     </div>
   );
 }
@@ -960,15 +960,17 @@ export default function BalanceQris() {
   const [showTray, setShowTray] = useState(false);
   const [showKompensasi, setShowKompensasi] = useState(false);
   const [showPemotongan, setShowPemotongan] = useState(false);
+  const [showPencairan, setShowPencairan] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} />
+        <Top onOpenTray={() => setShowTray(true)} onOpenKompensasi={() => setShowKompensasi(true)} onOpenPemotongan={() => setShowPemotongan(true)} onOpenPencairan={() => setShowPencairan(true)} />
       </div>
       {showTray && <PilihSaldoTray selected="qris" onClose={() => setShowTray(false)} />}
       {showKompensasi && <RiwayatKompensasiTray type="qris" onClose={() => setShowKompensasi(false)} />}
       {showPemotongan && <RiwayatPemotonganTray type="qris" onClose={() => setShowPemotongan(false)} />}
+      {showPencairan && <RiwayatPencairanTray type="qris" onClose={() => setShowPencairan(false)} />}
     </div>
   );
 }
