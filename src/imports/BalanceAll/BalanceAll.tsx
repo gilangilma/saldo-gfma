@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
+import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import svgPaths from "./svg-5am4megexx";
 
 function Icon() {
@@ -27,9 +29,9 @@ function Icon1() {
   );
 }
 
-function Frame29() {
+function Frame29({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
+    <button onClick={onOpenTray} className="bg-[#abffa6] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0 cursor-pointer border-none">
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="payments/16/ic_pinjam">
         <Icon />
       </div>
@@ -37,16 +39,16 @@ function Frame29() {
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/16/ic_expand_more">
         <Icon1 />
       </div>
-    </div>
+    </button>
   );
 }
 
-function Frame26() {
+function Frame26({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pb-[12px] pt-[16px] px-[12px] relative size-full">
-          <Frame29 />
+          <Frame29 onOpenTray={onOpenTray} />
         </div>
       </div>
     </div>
@@ -116,11 +118,11 @@ function Saldo() {
   );
 }
 
-function Frame25() {
+function Frame25({ onOpenTray }: { onOpenTray: () => void }) {
   return (
     <div className="bg-[#e0ffe0] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#00880d] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
-      <Frame26 />
+      <Frame26 onOpenTray={onOpenTray} />
       <Saldo />
     </div>
   );
@@ -841,10 +843,10 @@ function Frame20() {
   );
 }
 
-function Top() {
+function Top({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 p-[16px] top-[120px] w-[360px]" data-name="Top">
-      <Frame25 />
+    <div className="content-stretch flex flex-col gap-[16px] items-start p-[16px] w-full" data-name="Top">
+      <Frame25 onOpenTray={onOpenTray} />
       <Frame15 />
       <Frame20 />
     </div>
@@ -989,12 +991,14 @@ function TopNavbarTab() {
 }
 
 export default function BalanceAll() {
+  const [showTray, setShowTray] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Top />
+        <Top onOpenTray={() => setShowTray(true)} />
       </div>
+      {showTray && <PilihSaldoTray selected="semua" onClose={() => setShowTray(false)} />}
     </div>
   );
 }
