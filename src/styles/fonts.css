@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Maison Neue APP:Bold';
+  src: url('/Font/MaisonNeueAPP-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue APP:Book';
+  src: url('/Font/MaisonNeueAPP-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue APP:Demi';
+  src: url('/Font/MaisonNeueAPP-Demi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue:Book';
+  src: url('/Font/MaisonNeueAPP-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue:Demi';
+  src: url('/Font/MaisonNeueAPP-Demi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
