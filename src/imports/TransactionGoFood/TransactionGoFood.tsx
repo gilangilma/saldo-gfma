@@ -1,7 +1,20 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import svgPaths from "./svg-i8v0h32p5p";
 import PilihSaldoTray from "../../app/components/PilihSaldoTray";
+
+type ServiceFilter = "semua" | "delivery" | "pickup";
+
+const SERVICE_LABELS: Record<ServiceFilter, string> = {
+  semua: "semua GoFood",
+  delivery: "GoFood Delivery",
+  pickup: "GoFood Pickup",
+};
+const SERVICE_COUNTS: Record<ServiceFilter, number> = {
+  semua: 7,
+  delivery: 6,
+  pickup: 1,
+};
 
 function Icon() {
   return (
@@ -93,13 +106,13 @@ function Icon3() {
   );
 }
 
-function Frame8() {
+function Frame8({ count }: { count: number }) {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="payments/16/ic_bill">
         <Icon3 />
       </div>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#202020] text-[18px] whitespace-nowrap">8</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#202020] text-[18px] whitespace-nowrap">{count}</p>
       <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#4c4c4c] text-[14px] whitespace-nowrap">transaksi dari</p>
     </div>
   );
@@ -118,52 +131,52 @@ function Icon4() {
   );
 }
 
-function Frame6() {
+function Frame6({ label, onOpen }: { label: string; onOpen: () => void }) {
   return (
-    <div className="bg-[#f9f9f9] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">semua GoFood</p>
+    <button onClick={onOpen} className="bg-[#f9f9f9] content-stretch flex gap-[4px] items-center px-[8px] py-[4px] relative rounded-[16px] shrink-0 border-none cursor-pointer">
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">{label}</p>
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/16/ic_expand_more">
         <Icon4 />
       </div>
-    </div>
+    </button>
   );
 }
 
-function Frame() {
+function Frame({ serviceFilter, onOpenServiceTray }: { serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
     <div className="h-[56px] relative shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[4px] items-center px-[12px] py-[16px] relative size-full">
-          <Frame8 />
-          <Frame6 />
+          <Frame8 count={SERVICE_COUNTS[serviceFilter]} />
+          <Frame6 label={SERVICE_LABELS[serviceFilter]} onOpen={onOpenServiceTray} />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame2() {
+function Frame2({ serviceFilter, onOpenServiceTray }: { serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative rounded-[16px] shrink-0 w-[328px]">
-      <Frame />
+      <Frame serviceFilter={serviceFilter} onOpenServiceTray={onOpenServiceTray} />
     </div>
   );
 }
 
-function Frame1({ onOpenTray }: { onOpenTray: () => void }) {
+function Frame1({ onOpenTray, serviceFilter, onOpenServiceTray }: { onOpenTray: () => void; serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
     <div className="bg-[#fdedee] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
       <div aria-hidden="true" className="absolute border border-[#ffbfba] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <Frame3 onOpenTray={onOpenTray} />
-      <Frame2 />
+      <Frame2 serviceFilter={serviceFilter} onOpenServiceTray={onOpenServiceTray} />
     </div>
   );
 }
 
-function Filters({ onOpenTray }: { onOpenTray: () => void }) {
+function Filters({ onOpenTray, serviceFilter, onOpenServiceTray }: { onOpenTray: () => void; serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
     <div className="content-stretch flex flex-col items-start p-[16px] w-full" data-name="Filters">
-      <Frame1 onOpenTray={onOpenTray} />
+      <Frame1 onOpenTray={onOpenTray} serviceFilter={serviceFilter} onOpenServiceTray={onOpenServiceTray} />
     </div>
   );
 }
@@ -1009,66 +1022,59 @@ function SalesGoFoodDelivery7() {
   );
 }
 
-function TransactionList() {
+function TxDivider() {
+  return (
+    <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full">
+      <div className="flex-[1_0_0] h-px min-w-px relative">
+        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
+          <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function TipeLayananTray({ selected, onSelect, onClose }: { selected: ServiceFilter; onSelect: (f: ServiceFilter) => void; onClose: () => void }) {
+  return (
+    <div className="absolute inset-0 z-50 flex flex-col justify-end" style={{ background: "rgba(0,0,0,0.5)" }} onClick={onClose}>
+      <div className="bg-white rounded-tl-[16px] rounded-tr-[16px] pb-[32px]" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-[16px] py-[16px]">
+          <p className="font-['Maison_Neue_APP:Demi',sans-serif] text-[#202020] text-[16px] leading-[20px]">Tipe layanan</p>
+          <button onClick={onClose} className="bg-transparent border-none cursor-pointer p-0">
+            <p className="font-['Maison_Neue_APP:Demi',sans-serif] text-[#008a0d] text-[14px] leading-[20px]">Tutup</p>
+          </button>
+        </div>
+        <div className="h-px w-full bg-[#e7e7e7]" />
+        {(["delivery", "pickup", "semua"] as ServiceFilter[]).map(filter => (
+          <button key={filter} onClick={() => { onSelect(filter); onClose(); }} className="flex items-center justify-between w-full px-[16px] py-[16px] bg-transparent border-none cursor-pointer">
+            <p className={`font-['Maison_Neue_APP:${selected === filter ? "Demi" : "Book"}',sans-serif] text-[#202020] text-[14px] leading-[20px]`}>
+              {filter === "delivery" ? "GoFood Delivery" : filter === "pickup" ? "GoFood Pickup" : "Semua GoFood"}
+            </p>
+            {selected === filter && (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 8L6.5 12.5L14 5" stroke="#008a0d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TransactionList({ serviceFilter }: { serviceFilter: ServiceFilter }) {
+  const d = serviceFilter !== "pickup";
+  const p = serviceFilter !== "delivery";
   return (
     <div className="bg-white content-stretch flex flex-col gap-[16px] items-start pb-[16px] pt-[20px] px-[16px] rounded-tl-[16px] rounded-tr-[16px] w-full" data-name="Transaction list">
       <Frame7 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery1 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery2 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery3 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery4 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery5 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery7 />
+      {d && <><TxDivider /><SalesGoFoodDelivery /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery1 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery2 /></>}
+      {p && <><TxDivider /><SalesGoFoodDelivery3 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery4 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery5 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery7 /></>}
     </div>
   );
 }
@@ -1212,15 +1218,19 @@ function TopNavbarTab() {
 }
 
 export default function TransactionGoFood() {
+  const location = useLocation();
   const [showTray, setShowTray] = useState(false);
+  const [serviceFilter, setServiceFilter] = useState<ServiceFilter>((location.state?.serviceFilter as ServiceFilter) ?? "semua");
+  const [showServiceTray, setShowServiceTray] = useState(false);
   return (
     <div className="bg-[#f2f2f4] relative rounded-[16px] size-full overflow-hidden">
       <div className="no-scrollbar absolute top-0 left-0 right-0 bottom-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
         <TopNavbarTab />
-        <Filters onOpenTray={() => setShowTray(true)} />
-        <TransactionList />
+        <Filters onOpenTray={() => setShowTray(true)} serviceFilter={serviceFilter} onOpenServiceTray={() => setShowServiceTray(true)} />
+        <TransactionList serviceFilter={serviceFilter} />
       </div>
       {showTray && <PilihSaldoTray selected="gofood" onClose={() => setShowTray(false)} />}
+      {showServiceTray && <TipeLayananTray selected={serviceFilter} onSelect={setServiceFilter} onClose={() => setShowServiceTray(false)} />}
     </div>
   );
 }
