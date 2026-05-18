@@ -443,13 +443,14 @@ function Icon4() {
 }
 
 function Frame18() {
+  const navigate = useNavigate();
   return (
-    <div className="content-stretch flex gap-[4px] items-center justify-end relative shrink-0">
+    <button onClick={() => navigate("/finance/all")} className="content-stretch cursor-pointer flex gap-[4px] items-center justify-end relative shrink-0 border-none bg-transparent p-0">
       <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[13px] text-right whitespace-nowrap">Lihat semua</p>
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/16/ic_next_ios">
         <Icon4 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -1119,8 +1120,15 @@ function IconBadge1() {
 }
 
 function Item1() {
+  const navigate = useNavigate();
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative" data-name="item 2">
+    <div
+      onClick={() => navigate("/")}
+      role="button"
+      tabIndex={0}
+      className="content-stretch cursor-pointer flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative"
+      data-name="item 2"
+    >
       <IconBadge1 />
       <p className="font-['Maison_Neue_APP:Book',sans-serif] h-[16px] leading-[16px] min-w-full not-italic relative shrink-0 text-[#494a4a] text-[12px] text-center w-[min-content]">Pesanan</p>
     </div>
@@ -1151,8 +1159,15 @@ function IconBadge2() {
 }
 
 function Item2() {
+  const navigate = useNavigate();
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative" data-name="item 3">
+    <div
+      onClick={() => navigate("/")}
+      role="button"
+      tabIndex={0}
+      className="content-stretch cursor-pointer flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative"
+      data-name="item 3"
+    >
       <IconBadge2 />
       <p className="font-['Maison_Neue_APP:Book',sans-serif] h-[16px] leading-[16px] min-w-full not-italic relative shrink-0 text-[#494a4a] text-[12px] text-center w-[min-content]">{`Stok & Menu`}</p>
     </div>
@@ -1183,8 +1198,15 @@ function IconBadge3() {
 }
 
 function Item3() {
+  const navigate = useNavigate();
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative" data-name="item 4">
+    <div
+      onClick={() => navigate("/")}
+      role="button"
+      tabIndex={0}
+      className="content-stretch cursor-pointer flex flex-[1_0_0] flex-col gap-[4px] h-[64px] items-center min-w-px pb-[8px] pt-[12px] relative"
+      data-name="item 4"
+    >
       <IconBadge3 />
       <p className="font-['Maison_Neue_APP:Book',sans-serif] h-[16px] leading-[16px] min-w-full not-italic relative shrink-0 text-[#494a4a] text-[12px] text-center w-[min-content]">Promo</p>
     </div>

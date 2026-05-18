@@ -712,16 +712,17 @@ function Frame14() {
 }
 
 function Frame41() {
+  const navigate = useNavigate();
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row justify-center size-full">
         <div className="content-stretch flex items-start justify-center px-[12px] py-[16px] relative size-full">
-          <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0" data-name="button/secondary">
+          <button onClick={() => navigate("/finance/all")} className="content-stretch cursor-pointer flex items-center justify-center px-[16px] py-[8px] relative rounded-[18px] shrink-0 bg-transparent border-none" data-name="button/secondary">
             <div aria-hidden="true" className="absolute border border-[#008a0d] border-solid inset-0 pointer-events-none rounded-[18px]" />
             <div className="content-stretch flex items-center justify-center relative shrink-0" data-name=".properties/button/label/tiny">
               <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#007c0b] text-[14px] text-center whitespace-nowrap">Lihat riwayat lengkap</p>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
