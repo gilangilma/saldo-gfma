@@ -172,7 +172,6 @@ const transactions: TxProps[] = [
   { title: "GoFood Pickup | FP-181612", time: "16:00, 17 Aug", penjualan: "Rp750.000", biaya: "Rp75.000", pendapatan: "Rp675.000", tags: ["diskon"], hasMfp: true },
   { title: "GoFood Pickup | FP-181613", time: "15:30, 17 Aug", penjualan: "Rp890.000", biaya: "Rp89.000", pendapatan: "Rp801.000", tags: ["iklan", "diskon"], hasMfp: true },
   { title: "GoFood Delivery | F-12345678913", time: "14:00, 17 Aug", penjualan: "Rp1.050.000", biaya: "Rp105.000", pendapatan: "Rp945.000", tags: ["iklan", "diskon"], hasMfp: true },
-  { title: "GoFood Catering | FP-181614", time: "13:30, 17 Aug", penjualan: "Rp2.500.000", biaya: "Rp250.000", pendapatan: "Rp2.250.000", tags: [], hasMfp: false },
   { title: "GoFood Delivery | F-12345678914", time: "12:00, 17 Aug", penjualan: "Rp670.000", biaya: "Rp67.000", pendapatan: "Rp603.000", tags: ["iklan"], hasMfp: false },
   { title: "QRIS | QR-20240518001", time: "11:45, 17 Aug", penjualan: "Rp450.000", biaya: "Rp2.000", pendapatan: "Rp448.000", tags: [], hasMfp: false },
   { title: "QRIS | QR-20240518002", time: "11:30, 17 Aug", penjualan: "Rp320.000", biaya: "Rp2.000", pendapatan: "Rp318.000", tags: ["iklan"], hasMfp: true },
@@ -181,7 +180,6 @@ const transactions: TxProps[] = [
   { title: "QRIS | QR-20240518004", time: "09:00, 17 Aug", penjualan: "Rp280.000", biaya: "Rp2.000", pendapatan: "Rp278.000", tags: [], hasMfp: false },
   { title: "GoFood Pickup | FP-181615", time: "08:30, 17 Aug", penjualan: "Rp920.000", biaya: "Rp92.000", pendapatan: "Rp828.000", tags: ["diskon"], hasMfp: true },
   { title: "QRIS | QR-20240518005", time: "08:00, 17 Aug", penjualan: "Rp180.000", biaya: "Rp2.000", pendapatan: "Rp178.000", tags: ["iklan"], hasMfp: false },
-  { title: "GoFood Catering | FP-181616", time: "07:30, 17 Aug", penjualan: "Rp3.200.000", biaya: "Rp320.000", pendapatan: "Rp2.880.000", tags: [], hasMfp: false },
 ];
 
 function TransactionList() {

@@ -869,61 +869,6 @@ function SalesGoFoodDelivery5() {
   );
 }
 
-function TitleTime6() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#1c1d1d] text-[14px]">GoFood Catering | FP-181612</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element18() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element19() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element20() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value6() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element18 />
-      <Element19 />
-      <Element20 />
-    </div>
-  );
-}
-
-function SalesGoFoodDelivery6() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <TitleTime6 />
-      <Value6 />
-    </div>
-  );
-}
-
 function Icon17() {
   return (
     <div className="relative shrink-0 size-[16px]" data-name="icon">
@@ -1116,14 +1061,6 @@ function TransactionList() {
         </div>
       </div>
       <SalesGoFoodDelivery5 />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
-        <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">
-            <path clipRule="evenodd" d="M0 1H328V0H0V1Z" fill="var(--fill-0, #E7E7E7)" fillRule="evenodd" id="plain_divider" />
-          </svg>
-        </div>
-      </div>
-      <SalesGoFoodDelivery6 />
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
         <div className="flex-[1_0_0] h-px min-w-px relative" data-name="plain_divider">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 328 1">

@@ -321,44 +321,6 @@ function Frame18() {
   );
 }
 
-function Icon8() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p34919f00} fill="var(--fill-0, #4C4C4C)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function CollapseBtn2() {
-  return (
-    <div className="bg-[#f9f9f9] content-stretch flex items-start p-[4px] relative rounded-[40px] shrink-0" data-name="collapse_btn">
-      <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[40px]" />
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="navigation/16/ic_next_ios">
-        <Icon8 />
-      </div>
-    </div>
-  );
-}
-
-function Frame19() {
-  return (
-    <div className="h-[56px] relative shrink-0 w-full">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[8px] items-center px-[12px] py-[16px] relative size-full">
-          <p className="flex-[1_0_0] font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px]">Penjualan GoFood Catering</p>
-          <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp1.000.000</p>
-          <CollapseBtn2 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function RincianPenjualan() {
   return (
     <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]" data-name="Rincian penjualan">
@@ -386,20 +348,6 @@ function RincianPenjualan() {
         </div>
       </div>
       <Frame18 />
-      <div className="h-px relative shrink-0 w-full" data-name="divider">
-        <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
-            <div className="flex-[1_0_0] h-0 min-w-px relative" data-name="dotted_divider">
-              <div className="absolute inset-[-0.5px_-0.16%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 317 1">
-                  <path d="M0.5 0.5H316.5" id="dotted_divider" stroke="var(--stroke-0, #E7E7E7)" strokeDasharray="2 2" strokeLinecap="square" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Frame19 />
     </div>
   );
 }
@@ -434,19 +382,6 @@ function Frame20() {
         <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
           <p className="flex-[1_0_0] min-w-px relative">Biaya layanan GoFood Pickup</p>
           <p className="relative shrink-0 text-right whitespace-nowrap">- Rp100.000</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame21() {
-  return (
-    <div className="h-[56px] relative shrink-0 w-full">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
-          <p className="flex-[1_0_0] min-w-px relative">Biaya layanan GoFood Catering</p>
-          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp50.000</p>
         </div>
       </div>
     </div>
@@ -506,20 +441,6 @@ function RincianBiaya() {
         </div>
       </div>
       <Frame20 />
-      <div className="h-px relative shrink-0 w-full" data-name="divider">
-        <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
-            <div className="flex-[1_0_0] h-0 min-w-px relative" data-name="dotted_divider">
-              <div className="absolute inset-[-0.5px_-0.16%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 317 1">
-                  <path d="M0.5 0.5H316.5" id="dotted_divider" stroke="var(--stroke-0, #E7E7E7)" strokeDasharray="2 2" strokeLinecap="square" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Frame21 />
       <div className="h-px relative shrink-0 w-full" data-name="divider">
         <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
           <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">

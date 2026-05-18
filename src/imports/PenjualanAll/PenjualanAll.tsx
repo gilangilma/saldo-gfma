@@ -136,7 +136,6 @@ function RincianPenjualan() {
       {[
         { label: "Penjualan GoFood Delivery", amount: "Rp2.000.000" },
         { label: "Penjualan GoFood Pickup", amount: "Rp1.000.000" },
-        { label: "Penjualan GoFood Catering", amount: "Rp1.000.000" },
         { label: "Penjualan QRIS", amount: "Rp600.000" },
       ].map((item, i) => (
         <div key={i} className="h-[56px] relative shrink-0 w-full">
@@ -187,7 +186,6 @@ function RincianBiaya() {
       {[
         { label: "Biaya layanan GoFood Delivery", amount: "- Rp750.000" },
         { label: "Biaya layanan GoFood Pickup", amount: "- Rp100.000" },
-        { label: "Biaya layanan GoFood Catering", amount: "- Rp50.000" },
         { label: "Biaya program promo", amount: "- Rp50.000" },
         { label: "Promo yang ditanggung mitra usaha", amount: "- Rp100.000" },
         { label: "Biaya transaksi QRIS", amount: "- Rp550.000" },
