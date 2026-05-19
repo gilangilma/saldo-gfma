@@ -617,19 +617,34 @@ function SaldoTerutang() {
           {expanded ? <ChevronUp /> : <ChevronDown />}
         </div>
       </button>
-      {/* Expanded items */}
-      {expanded && TERUTANG_ITEMS.map((item) => (
-        <div key={item.label} className="w-full">
-          <div className="h-px w-full bg-[#e7e7e7]" />
-          <div className="flex items-center justify-between px-[16px] py-[12px] w-full">
-            <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px]">{item.label}</p>
-            <div className="flex items-center gap-[4px] shrink-0">
-              <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#4c4c4c] text-[14px] whitespace-nowrap">{item.amount}</p>
-              <ChevronRight />
-            </div>
+      {/* Expanded items container */}
+      {expanded && (
+        <div className="px-[16px] pb-[16px] w-full">
+          <div className="bg-[#f9f9f9] relative rounded-[12px] w-full overflow-hidden">
+            <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[12px]" />
+            {TERUTANG_ITEMS.map((item, i) => (
+              <div key={item.label}>
+                {i > 0 && (
+                  <div className="px-[12px]">
+                    <div className="h-px relative w-full overflow-hidden">
+                      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 257 1">
+                        <path d="M0.5 0.5H256.5" stroke="#E7E7E7" strokeDasharray="2 2" strokeLinecap="square" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
+                <div className="flex items-center justify-between px-[12px] py-[12px] w-full">
+                  <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px]">{item.label}</p>
+                  <div className="flex items-center gap-[4px] shrink-0">
+                    <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#4c4c4c] text-[14px] whitespace-nowrap">{item.amount}</p>
+                    <ChevronRight />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
+      )}
     </div>
   );
 }
