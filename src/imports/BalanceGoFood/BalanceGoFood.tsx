@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { SALDO_GOFOOD, formatRp } from "../../data/saldo";
 import svgPaths from "./svg-ewyz4of39d";
 import PilihSaldoTray from "../../app/components/PilihSaldoTray";
 import RiwayatKompensasiTray from "../../app/components/RiwayatKompensasiTray";
@@ -72,7 +73,7 @@ function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full">
       <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] relative shrink-0 text-[#202020] text-[14px] w-full">Saldo yang dapat dicairkan</p>
-      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[44px] relative shrink-0 text-[#1c1d1d] text-[28px] w-full">Rp2.000.000</p>
+      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[44px] relative shrink-0 text-[#1c1d1d] text-[28px] w-full">{formatRp(SALDO_GOFOOD)}</p>
       <Frame1 />
     </div>
   );
