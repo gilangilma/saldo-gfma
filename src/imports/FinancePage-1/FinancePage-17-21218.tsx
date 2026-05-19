@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import svgPaths from "./svg-w9q5xzqbo7";
 import imgBanner from "./e39a572d2f168c3c71aa69f412ec41f0ccc4cd3c.png";
+import icBillsRestructuring from "./ic_bills_restructuring.png";
 
 function Icon() {
   return (
@@ -556,10 +557,88 @@ function PayoutHistory() {
   );
 }
 
+const TERUTANG_ITEMS = [
+  { label: "Biaya iklan", amount: "Rp70.000" },
+  { label: "Tagihan Gopay Pinjam Modal", amount: "Rp100.000" },
+  { label: "GoSpiker", amount: "Rp2.000" },
+];
+
+function ChevronDown() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="#4C4C4C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChevronUp() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M5 12.5L10 7.5L15 12.5" stroke="#4C4C4C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChevronRight() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path clipRule="evenodd" d={svgPaths.p34919f00} fill="#8B8B8B" fillRule="evenodd" />
+    </svg>
+  );
+}
+
+function SaldoTerutang() {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full" data-name="Saldo terutang">
+      <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      {/* Header */}
+      <div className="content-stretch flex flex-col gap-[8px] items-start p-[16px] relative w-full">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex gap-[8px] items-center">
+            <img src={icBillsRestructuring} alt="" className="size-[32px] shrink-0" />
+            <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px]">Saldo terutang</p>
+          </div>
+          <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px] whitespace-nowrap">Rp172.000</p>
+        </div>
+        <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic text-[#4c4c4c] text-[13px]">Jumlah tagihan yang akan memotong saldo</p>
+      </div>
+      {/* Divider */}
+      <div className="h-px w-full bg-[#e7e7e7] shrink-0" />
+      {/* Toggle row */}
+      <button
+        onClick={() => setExpanded(v => !v)}
+        className="flex items-center justify-between w-full px-[16px] py-[12px] bg-transparent border-none cursor-pointer"
+      >
+        <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px]">
+          {expanded ? "Sembunyikan rincian" : "Lihat rincian"}
+        </p>
+        <div className="bg-[#f9f9f9] flex items-center justify-center p-[2px] rounded-[40px] border border-[#e7e7e7]">
+          {expanded ? <ChevronUp /> : <ChevronDown />}
+        </div>
+      </button>
+      {/* Expanded items */}
+      {expanded && TERUTANG_ITEMS.map((item) => (
+        <div key={item.label} className="w-full">
+          <div className="h-px w-full bg-[#e7e7e7]" />
+          <div className="flex items-center justify-between px-[16px] py-[12px] w-full">
+            <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#202020] text-[14px]">{item.label}</p>
+            <div className="flex items-center gap-[4px] shrink-0">
+              <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[20px] not-italic text-[#4c4c4c] text-[14px] whitespace-nowrap">{item.amount}</p>
+              <ChevronRight />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Main() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full" data-name="Main">
       <Total />
+      <SaldoTerutang />
       <PayoutHistory />
     </div>
   );
