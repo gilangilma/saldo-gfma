@@ -272,7 +272,7 @@ function CollapseBtn() {
 function Frame16() {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/finance/gofood/transaksi", { state: { serviceFilter: "delivery" } })} className="h-[56px] relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
+    <button onClick={() => navigate("/finance/gofood/transaksi", { state: { serviceFilter: "delivery" }, replace: true })} className="h-[56px] relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] py-[16px] relative size-full">
           <p className="flex-[1_0_0] font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px]">Penjualan GoFood Delivery</p>
@@ -311,7 +311,7 @@ function CollapseBtn1() {
 function Frame18() {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/finance/gofood/transaksi", { state: { serviceFilter: "pickup" } })} className="h-[56px] relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
+    <button onClick={() => navigate("/finance/gofood/transaksi", { state: { serviceFilter: "pickup" }, replace: true })} className="h-[56px] relative shrink-0 w-full bg-transparent border-none p-0 text-left cursor-pointer">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] py-[16px] relative size-full">
           <p className="flex-[1_0_0] font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px]">Penjualan GoFood Pickup</p>

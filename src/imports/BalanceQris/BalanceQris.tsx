@@ -168,7 +168,7 @@ function Frame16() {
 function Frame3() {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/finance/qris/penjualan")} className="cursor-pointer relative shrink-0 w-full bg-transparent border-none p-0 text-left">
+    <button onClick={() => navigate("/finance/qris/penjualan", { replace: true })} className="cursor-pointer relative shrink-0 w-full bg-transparent border-none p-0 text-left">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-between px-[12px] py-[16px] relative size-full">
           <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] whitespace-nowrap">Pendapatan bersih</p>
