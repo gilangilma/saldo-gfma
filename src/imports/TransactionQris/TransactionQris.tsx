@@ -119,7 +119,7 @@ function Frame() {
 
 function Frame2() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-center relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-white content-stretch flex flex-col items-center relative rounded-[16px] shrink-0 w-full">
       <Frame />
     </div>
   );
@@ -127,7 +127,7 @@ function Frame2() {
 
 function Frame1({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#d6f7ff] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-[#d6f7ff] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#0081a0] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <Frame3 onOpenTray={onOpenTray} />
       <Frame2 />

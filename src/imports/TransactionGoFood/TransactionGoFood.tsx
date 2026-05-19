@@ -157,7 +157,7 @@ function Frame({ serviceFilter, onOpenServiceTray }: { serviceFilter: ServiceFil
 
 function Frame2({ serviceFilter, onOpenServiceTray }: { serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
-    <div className="bg-white content-stretch flex flex-col items-center relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-white content-stretch flex flex-col items-center relative rounded-[16px] shrink-0 w-full">
       <Frame serviceFilter={serviceFilter} onOpenServiceTray={onOpenServiceTray} />
     </div>
   );
@@ -165,7 +165,7 @@ function Frame2({ serviceFilter, onOpenServiceTray }: { serviceFilter: ServiceFi
 
 function Frame1({ onOpenTray, serviceFilter, onOpenServiceTray }: { onOpenTray: () => void; serviceFilter: ServiceFilter; onOpenServiceTray: () => void }) {
   return (
-    <div className="bg-[#fdedee] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-[#fdedee] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#ffbfba] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <Frame3 onOpenTray={onOpenTray} />
       <Frame2 serviceFilter={serviceFilter} onOpenServiceTray={onOpenServiceTray} />

@@ -217,7 +217,7 @@ function Frame20() {
 
 function Frame21() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <Frame15 />
       <Frame19 />
       <Frame20 />
@@ -227,7 +227,7 @@ function Frame21() {
 
 function Frame18({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#d6f7ff] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-[#d6f7ff] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#0081a0] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <Frame22 onOpenTray={onOpenTray} />
       <Frame21 />
@@ -285,7 +285,7 @@ function Frame16() {
 
 function RincianPenjualan() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]" data-name="Rincian penjualan">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full" data-name="Rincian penjualan">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <Frame13 />
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
@@ -338,7 +338,7 @@ function Frame17() {
 
 function RincianBiaya() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]" data-name="Rincian biaya">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full" data-name="Rincian biaya">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <Frame14 />
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">

@@ -217,7 +217,7 @@ function Frame26() {
 
 function Frame27() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <Frame15 />
       <Frame25 />
       <Frame26 />
@@ -227,7 +227,7 @@ function Frame27() {
 
 function Frame24({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="bg-[#fdedee] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]">
+    <div className="bg-[#fdedee] content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#ffbfba] border-solid inset-[-1px] pointer-events-none rounded-[17px]" />
       <Frame28 onOpenTray={onOpenTray} />
       <Frame27 />
@@ -325,7 +325,7 @@ function Frame18() {
 
 function RincianPenjualan() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]" data-name="Rincian penjualan">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full" data-name="Rincian penjualan">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <Frame13 />
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
@@ -393,7 +393,7 @@ function Frame20() {
 
 function RincianBiaya() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-[328px]" data-name="Rincian biaya">
+    <div className="bg-white content-stretch flex flex-col items-start relative rounded-[16px] shrink-0 w-full" data-name="Rincian biaya">
       <div aria-hidden="true" className="absolute border border-[#e7e7e7] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <Frame14 />
       <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 w-full" data-name="divider">
@@ -691,7 +691,7 @@ function Frame9() {
 
 function Content({ onOpenTray }: { onOpenTray: () => void }) {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 p-[16px] top-[120px] w-[360px]" data-name="Content">
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 p-[16px] top-[120px] w-full" data-name="Content">
       <Frame24 onOpenTray={onOpenTray} />
       <RincianPenjualan />
       <RincianBiaya />
