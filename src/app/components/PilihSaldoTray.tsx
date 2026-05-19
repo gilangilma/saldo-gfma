@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 type SaldoOption = "gofood" | "qris" | "semua";
 
@@ -46,12 +46,18 @@ function CheckIcon() {
 
 export default function PilihSaldoTray({ selected, onClose }: Props) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSelect = (option: SaldoOption) => {
     onClose();
-    if (option === "gofood") navigate("/finance/gofood");
-    else if (option === "qris") navigate("/finance/qris");
-    else navigate("/finance/all");
+    const base = option === "gofood" ? "/finance/gofood"
+               : option === "qris"   ? "/finance/qris"
+               : "/finance/all";
+    const path = location.pathname;
+    const suffix = path.endsWith("/penjualan") ? "/penjualan"
+                 : path.endsWith("/transaksi")  ? "/transaksi"
+                 : "";
+    navigate(base + suffix, { replace: true });
   };
 
   const options: { key: SaldoOption; label: string; bg: string; icon: React.ReactNode }[] = [
