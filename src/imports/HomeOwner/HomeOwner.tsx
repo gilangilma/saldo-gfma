@@ -459,7 +459,7 @@ function Frame43() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px not-italic relative text-[#1c1d1d] text-[16px]">Rp4.000.000</p>
+      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px not-italic relative text-[#1c1d1d] text-[16px]">Rp385.000</p>
     </div>
   );
 }
@@ -500,7 +500,7 @@ function Detail() {
 function Frame3() {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0 w-full">
-      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1c1d1d] text-[16px] whitespace-nowrap">8</p>
+      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1c1d1d] text-[16px] whitespace-nowrap">12</p>
       <Detail />
     </div>
   );
@@ -558,7 +558,7 @@ function Frame35() {
 function Frame33() {
   return (
     <div className="content-stretch flex items-start relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#494a4a] text-[13px] whitespace-nowrap">+Rp50.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#494a4a] text-[13px] whitespace-nowrap">+Rp32.000</p>
     </div>
   );
 }
@@ -650,7 +650,7 @@ function Frame44() {
 function Frame4() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px not-italic relative text-[#1c1d1d] text-[16px]">Rp2.350.100</p>
+      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px not-italic relative text-[#1c1d1d] text-[16px]">Rp210.000</p>
     </div>
   );
 }
@@ -749,7 +749,7 @@ function Frame36() {
 function Frame37() {
   return (
     <div className="content-stretch flex items-start relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#494a4a] text-[13px] whitespace-nowrap">+Rp50.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#494a4a] text-[13px] whitespace-nowrap">+Rp26.000</p>
     </div>
   );
 }

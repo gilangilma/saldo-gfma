@@ -99,7 +99,7 @@ function Frame29() {
   return (
     <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] items-start justify-between leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] w-full whitespace-nowrap">
       <p className="relative shrink-0">Pendapatan bersih</p>
-      <p className="relative shrink-0">+ Rp3.000.000</p>
+      <p className="relative shrink-0">+ Rp520.000</p>
     </div>
   );
 }
@@ -108,7 +108,7 @@ function Frame30() {
   return (
     <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] items-start justify-between leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] w-full whitespace-nowrap">
       <p className="relative shrink-0">Kompensasi</p>
-      <p className="relative shrink-0">+ Rp1.000.000</p>
+      <p className="relative shrink-0">+ Rp30.000</p>
     </div>
   );
 }
@@ -117,7 +117,7 @@ function Frame31() {
   return (
     <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] items-start justify-between leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] w-full whitespace-nowrap">
       <p className="relative shrink-0">Pemotongan</p>
-      <p className="relative shrink-0">- Rp2.000.000</p>
+      <p className="relative shrink-0">- Rp100.000</p>
     </div>
   );
 }
@@ -243,7 +243,7 @@ function Frame33() {
   return (
     <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] items-start justify-between leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] w-full whitespace-nowrap">
       <p className="relative shrink-0">Pendapatan bersih</p>
-      <p className="relative shrink-0">+ Rp1.000.000</p>
+      <p className="relative shrink-0">+ Rp205.000</p>
     </div>
   );
 }
@@ -261,7 +261,7 @@ function Frame36() {
   return (
     <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] items-start justify-between leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] w-full whitespace-nowrap">
       <p className="relative shrink-0">Pemotongan</p>
-      <p className="relative shrink-0">- Rp400.000</p>
+      <p className="relative shrink-0">- Rp75.000</p>
     </div>
   );
 }
