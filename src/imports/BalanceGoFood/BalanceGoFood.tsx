@@ -173,7 +173,7 @@ function CollapseBtn() {
 function Frame17() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] text-right whitespace-nowrap">+ Rp3.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] text-right whitespace-nowrap">+ Rp520.000</p>
       <CollapseBtn />
     </div>
   );
@@ -220,7 +220,7 @@ function CollapseBtn1() {
 function Frame18() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] text-right whitespace-nowrap">+ Rp1.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] text-right whitespace-nowrap">+ Rp30.000</p>
       <CollapseBtn1 />
     </div>
   );
@@ -266,7 +266,7 @@ function CollapseBtn2() {
 function Frame19() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#c10022] text-[13px] text-right whitespace-nowrap">- Rp2.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#c10022] text-[13px] text-right whitespace-nowrap">- Rp100.000</p>
       <CollapseBtn2 />
     </div>
   );
@@ -288,7 +288,7 @@ function Frame6({ onOpenPemotongan }: { onOpenPemotongan: () => void }) {
 function Frame20() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-[112px]">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[13px] text-right whitespace-nowrap">Rp2.000.000</p>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[13px] text-right whitespace-nowrap">{formatRp(SALDO_GOFOOD)}</p>
     </div>
   );
 }
