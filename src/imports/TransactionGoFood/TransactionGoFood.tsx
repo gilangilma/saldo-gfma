@@ -11,9 +11,9 @@ const SERVICE_LABELS: Record<ServiceFilter, string> = {
   pickup: "GoFood Pickup",
 };
 const SERVICE_COUNTS: Record<ServiceFilter, number> = {
-  semua: 7,
+  semua: 10,
   delivery: 6,
-  pickup: 1,
+  pickup: 4,
 };
 
 function Icon() {
@@ -212,12 +212,13 @@ function Frame7() {
   );
 }
 
-function Icon5() {
+// ─── Shared transaction components ───────────────────────────────────────────
+
+function IklanIcon() {
   return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
+    <div className="relative shrink-0 size-[16px]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
+        <g id="icon"><g id="bound" />
           <path clipRule="evenodd" d={svgPaths.p3da9e380} fill="var(--fill-0, #87027B)" fillRule="evenodd" id="color" />
         </g>
       </svg>
@@ -225,23 +226,11 @@ function Icon5() {
   );
 }
 
-function DiscountBadge() {
+function DiskonIcon() {
   return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon5 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
-    </div>
-  );
-}
-
-function Icon6() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
+    <div className="relative shrink-0 size-[16px]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
+        <g id="icon"><g id="bound" />
           <path clipRule="evenodd" d={svgPaths.p3cdd3460} fill="var(--fill-0, #0081A0)" fillRule="evenodd" id="Vector" />
         </g>
       </svg>
@@ -249,80 +238,11 @@ function Icon6() {
   );
 }
 
-function MfpType() {
+function MitraIcon() {
   return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon6 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
-    </div>
-  );
-}
-
-function PromoTag() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Promo tag">
-      <div className="content-stretch flex items-center relative shrink-0" data-name="Campaign Tag">
-        <DiscountBadge />
-      </div>
-      <MfpType />
-    </div>
-  );
-}
-
-function TitleTime() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp56</p>
-    </div>
-  );
-}
-
-function Element1() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element2() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element />
-      <Element1 />
-      <Element2 />
-    </div>
-  );
-}
-
-function Icon7() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
+    <div className="relative shrink-0 size-[16px]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
+        <g id="icon"><g id="bound" />
           <path clipRule="evenodd" d={svgPaths.p17c39d00} fill="var(--fill-0, #FFB500)" fillRule="evenodd" id="color" />
         </g>
       </svg>
@@ -330,697 +250,104 @@ function Icon7() {
   );
 }
 
-function MfpValue() {
+function IklanBadge() {
   return (
-    <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon7 />
-      </div>
-      <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
+    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
+      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0"><IklanIcon /></div>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
     </div>
   );
 }
 
+function DiskonBadge() {
+  return (
+    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
+      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]"><DiskonIcon /></div>
+      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
+    </div>
+  );
+}
+
+type TxProps = {
+  id: string; time: string;
+  penjualan: string; biaya: string; pendapatan: string;
+  iklan?: boolean; diskon?: boolean; mitra?: boolean;
+};
+
+function SalesTx({ id, time, penjualan, biaya, pendapatan, iklan, diskon, mitra }: TxProps) {
+  const isPickup = id.startsWith("FP-");
+  const title = isPickup ? `GoFood Pickup | ${id}` : `GoFood Delivery | ${id}`;
+  return (
+    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
+      {(iklan || diskon) && (
+        <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Promo tag">
+          {iklan && <IklanBadge />}
+          {diskon && <DiskonBadge />}
+        </div>
+      )}
+      <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
+        <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">{title}</p>
+        <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">{time}</p>
+      </div>
+      <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
+          <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
+          <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">{penjualan}</p>
+        </div>
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
+          <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
+          <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">{biaya}</p>
+        </div>
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
+          <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
+          <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">{pendapatan}</p>
+        </div>
+      </div>
+      {mitra && (
+        <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
+          <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0"><MitraIcon /></div>
+          <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Delivery: total Pendapatan = 76+96+64+88+60+92 = Rp476.000
 function SalesGoFoodDelivery() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <PromoTag />
-      <TitleTime />
-      <Value />
-      <MfpValue />
-    </div>
-  );
+  return <SalesTx id="F-181611" time="18:30, 17 Aug" penjualan="Rp95.000" biaya="Rp19.000" pendapatan="Rp76.000" iklan diskon mitra />;
 }
-
-function Icon8() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3da9e380} fill="var(--fill-0, #87027B)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function DiscountBadge1() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon8 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
-    </div>
-  );
-}
-
-function PromoTag1() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Promo tag">
-      <div className="content-stretch flex items-center relative shrink-0" data-name="Campaign Tag">
-        <DiscountBadge1 />
-      </div>
-    </div>
-  );
-}
-
-function TitleTime1() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element3() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element4() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element5() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value1() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element3 />
-      <Element4 />
-      <Element5 />
-    </div>
-  );
-}
-
 function SalesGoFoodDelivery1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <PromoTag1 />
-      <TitleTime1 />
-      <Value1 />
-    </div>
-  );
+  return <SalesTx id="F-181608" time="17:15, 17 Aug" penjualan="Rp120.000" biaya="Rp24.000" pendapatan="Rp96.000" iklan />;
 }
-
-function TitleTime2() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element6() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element7() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element8() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value2() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element6 />
-      <Element7 />
-      <Element8 />
-    </div>
-  );
-}
-
 function SalesGoFoodDelivery2() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <TitleTime2 />
-      <Value2 />
-    </div>
-  );
+  return <SalesTx id="F-181605" time="16:00, 17 Aug" penjualan="Rp80.000" biaya="Rp16.000" pendapatan="Rp64.000" />;
 }
-
-function Icon9() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3cdd3460} fill="var(--fill-0, #0081A0)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpType1() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon9 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
-    </div>
-  );
-}
-
-function TitleTime3() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Pickup | FP-181612</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element9() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element10() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element11() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value3() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element9 />
-      <Element10 />
-      <Element11 />
-    </div>
-  );
-}
-
-function Icon10() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p17c39d00} fill="var(--fill-0, #FFB500)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpValue1() {
-  return (
-    <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon10 />
-      </div>
-      <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
-    </div>
-  );
-}
-
-function SalesGoFoodDelivery3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <MfpType1 />
-      <TitleTime3 />
-      <Value3 />
-      <MfpValue1 />
-    </div>
-  );
-}
-
-function Icon11() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3da9e380} fill="var(--fill-0, #87027B)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function DiscountBadge2() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon11 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
-    </div>
-  );
-}
-
-function Icon12() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3cdd3460} fill="var(--fill-0, #0081A0)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpType2() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon12 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
-    </div>
-  );
-}
-
-function PromoTag2() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Promo tag">
-      <div className="content-stretch flex items-center relative shrink-0" data-name="Campaign Tag">
-        <DiscountBadge2 />
-      </div>
-      <MfpType2 />
-    </div>
-  );
-}
-
-function TitleTime4() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element12() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element13() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element14() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value4() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element12 />
-      <Element13 />
-      <Element14 />
-    </div>
-  );
-}
-
-function Icon13() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p17c39d00} fill="var(--fill-0, #FFB500)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpValue2() {
-  return (
-    <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon13 />
-      </div>
-      <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
-    </div>
-  );
-}
-
 function SalesGoFoodDelivery4() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <PromoTag2 />
-      <TitleTime4 />
-      <Value4 />
-      <MfpValue2 />
-    </div>
-  );
+  return <SalesTx id="F-181603" time="14:30, 17 Aug" penjualan="Rp110.000" biaya="Rp22.000" pendapatan="Rp88.000" iklan diskon mitra />;
 }
-
-function Icon14() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3da9e380} fill="var(--fill-0, #87027B)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function DiscountBadge3() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon14 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
-    </div>
-  );
-}
-
-function Icon15() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3cdd3460} fill="var(--fill-0, #0081A0)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpType3() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon15 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
-    </div>
-  );
-}
-
-function PromoTag3() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Promo tag">
-      <div className="content-stretch flex items-center relative shrink-0" data-name="Campaign Tag">
-        <DiscountBadge3 />
-      </div>
-      <MfpType3 />
-    </div>
-  );
-}
-
-function TitleTime5() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element15() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element16() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element17() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value5() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element15 />
-      <Element16 />
-      <Element17 />
-    </div>
-  );
-}
-
-function Icon16() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p17c39d00} fill="var(--fill-0, #FFB500)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpValue3() {
-  return (
-    <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon16 />
-      </div>
-      <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
-    </div>
-  );
-}
-
 function SalesGoFoodDelivery5() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <PromoTag3 />
-      <TitleTime5 />
-      <Value5 />
-      <MfpValue3 />
-    </div>
-  );
+  return <SalesTx id="F-181601" time="13:00, 17 Aug" penjualan="Rp75.000" biaya="Rp15.000" pendapatan="Rp60.000" iklan diskon mitra />;
 }
-
-function Icon17() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3da9e380} fill="var(--fill-0, #87027B)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function DiscountBadge4() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#feebfd] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="Discount badge">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon17 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari iklan</p>
-    </div>
-  );
-}
-
-function Icon18() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p3cdd3460} fill="var(--fill-0, #0081A0)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpType4() {
-  return (
-    <div className="bg-gradient-to-r content-stretch flex from-[#d6f7ff] gap-[6px] items-center pl-[4px] pr-[8px] py-[2px] relative rounded-[12px] shrink-0 to-white" data-name="MFP Type">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon18 />
-      </div>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[12px] whitespace-nowrap">Dari diskon</p>
-    </div>
-  );
-}
-
-function PromoTag4() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Promo tag">
-      <div className="content-stretch flex items-center relative shrink-0" data-name="Campaign Tag">
-        <DiscountBadge4 />
-      </div>
-      <MfpType4 />
-    </div>
-  );
-}
-
-function TitleTime7() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start not-italic relative shrink-0 w-full" data-name="Title & time">
-      <p className="flex-[1_0_0] font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] min-w-px relative text-[#202020] text-[14px]">GoFood Delivery | F-12345678910</p>
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] relative shrink-0 text-[#8b8b8b] text-[12px] text-right whitespace-nowrap">18:00, 17 Aug</p>
-    </div>
-  );
-}
-
-function Element21() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Penjualan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp1.135.000</p>
-    </div>
-  );
-}
-
-function Element22() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Biaya</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp127.000</p>
-    </div>
-  );
-}
-
-function Element23() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px relative" data-name="Element">
-      <p className="font-['Maison_Neue_APP:Book',sans-serif] relative shrink-0 text-[#8b8b8b] text-[12px]">Pendapatan</p>
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] relative shrink-0 text-[#4c4c4c] text-[13px]">Rp2.228.000</p>
-    </div>
-  );
-}
-
-function Value7() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-center leading-[16px] not-italic relative shrink-0 w-full whitespace-nowrap" data-name="Value">
-      <Element21 />
-      <Element22 />
-      <Element23 />
-    </div>
-  );
-}
-
-function Icon19() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="icon">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="icon">
-          <g id="bound" />
-          <path clipRule="evenodd" d={svgPaths.p17c39d00} fill="var(--fill-0, #FFB500)" fillRule="evenodd" id="color" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MfpValue4() {
-  return (
-    <div className="content-stretch flex gap-[6px] items-center pt-[4px] relative rounded-[12px] shrink-0 w-full" data-name="MFP value">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="properties/inputfield/placeholder_icon_16">
-        <Icon19 />
-      </div>
-      <p className="font-['Maison_Neue:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#8b8b8b] text-[12px] whitespace-nowrap">Promo yang ditanggung mitra usaha -5.000</p>
-    </div>
-  );
-}
-
 function SalesGoFoodDelivery7() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Sales/GoFood/Delivery">
-      <PromoTag4 />
-      <TitleTime7 />
-      <Value7 />
-      <MfpValue4 />
-    </div>
-  );
+  return <SalesTx id="F-181599" time="11:45, 17 Aug" penjualan="Rp115.000" biaya="Rp23.000" pendapatan="Rp92.000" iklan diskon mitra />;
 }
+
+// Pickup: total Pendapatan = 72+55+59+38 = Rp224.000 — no Dari diskon, no Promo mitra
+function SalesGoFoodDelivery3() {
+  return <SalesTx id="FP-181612" time="18:00, 17 Aug" penjualan="Rp85.000" biaya="Rp13.000" pendapatan="Rp72.000" />;
+}
+function SalesGoFoodPickup2() {
+  return <SalesTx id="FP-181609" time="15:30, 17 Aug" penjualan="Rp65.000" biaya="Rp10.000" pendapatan="Rp55.000" />;
+}
+function SalesGoFoodPickup3() {
+  return <SalesTx id="FP-181606" time="12:30, 17 Aug" penjualan="Rp70.000" biaya="Rp11.000" pendapatan="Rp59.000" />;
+}
+function SalesGoFoodPickup4() {
+  return <SalesTx id="FP-181602" time="10:00, 17 Aug" penjualan="Rp45.000" biaya="Rp7.000" pendapatan="Rp38.000" />;
+}
+
+// ─── List helpers ─────────────────────────────────────────────────────────────
 
 function TxDivider() {
   return (
@@ -1069,15 +396,20 @@ function TransactionList({ serviceFilter }: { serviceFilter: ServiceFilter }) {
     <div className="bg-white content-stretch flex flex-col gap-[16px] items-start pb-[16px] pt-[20px] px-[16px] rounded-tl-[16px] rounded-tr-[16px] w-full" data-name="Transaction list">
       <Frame7 />
       {d && <><TxDivider /><SalesGoFoodDelivery /></>}
-      {d && <><TxDivider /><SalesGoFoodDelivery1 /></>}
-      {d && <><TxDivider /><SalesGoFoodDelivery2 /></>}
       {p && <><TxDivider /><SalesGoFoodDelivery3 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery1 /></>}
+      {p && <><TxDivider /><SalesGoFoodPickup2 /></>}
+      {d && <><TxDivider /><SalesGoFoodDelivery2 /></>}
+      {p && <><TxDivider /><SalesGoFoodPickup3 /></>}
       {d && <><TxDivider /><SalesGoFoodDelivery4 /></>}
+      {p && <><TxDivider /><SalesGoFoodPickup4 /></>}
       {d && <><TxDivider /><SalesGoFoodDelivery5 /></>}
       {d && <><TxDivider /><SalesGoFoodDelivery7 /></>}
     </div>
   );
 }
+
+// ─── Navigation & layout ──────────────────────────────────────────────────────
 
 function Wifi() {
   return (

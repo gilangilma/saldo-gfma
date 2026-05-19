@@ -107,7 +107,7 @@ function Frame10() {
 function Frame() {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] whitespace-nowrap">+ Rp4.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#007c0b] text-[13px] whitespace-nowrap">+ Rp860.000</p>
     </div>
   );
 }
@@ -152,7 +152,7 @@ function Frame11() {
 function Frame1() {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative">
-      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#c10022] text-[13px] whitespace-nowrap">- Rp1.000.000</p>
+      <p className="font-['Maison_Neue_APP:Demi',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#c10022] text-[13px] whitespace-nowrap">- Rp160.000</p>
     </div>
   );
 }
@@ -197,7 +197,7 @@ function Frame12() {
 function Frame2() {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative">
-      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">= Rp3.000.000</p>
+      <p className="font-['Maison_Neue_APP:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#202020] text-[14px] whitespace-nowrap">= Rp700.000</p>
     </div>
   );
 }
@@ -276,7 +276,7 @@ function Frame16() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] py-[16px] relative size-full">
           <p className="flex-[1_0_0] font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px]">Penjualan GoFood Delivery</p>
-          <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp2.000.000</p>
+          <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp476.000</p>
           <CollapseBtn />
         </div>
       </div>
@@ -315,7 +315,7 @@ function Frame18() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] py-[16px] relative size-full">
           <p className="flex-[1_0_0] font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] min-w-px not-italic relative text-[#4c4c4c] text-[13px]">Penjualan GoFood Pickup</p>
-          <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp1.000.000</p>
+          <p className="font-['Maison_Neue_APP:Book',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#4c4c4c] text-[13px] text-right whitespace-nowrap">Rp224.000</p>
           <CollapseBtn1 />
         </div>
       </div>
@@ -370,7 +370,7 @@ function Frame17() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
           <p className="flex-[1_0_0] min-w-px relative">Biaya layanan GoFood Delivery</p>
-          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp750.000</p>
+          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp119.000</p>
         </div>
       </div>
     </div>
@@ -383,38 +383,13 @@ function Frame20() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
           <p className="flex-[1_0_0] min-w-px relative">Biaya layanan GoFood Pickup</p>
-          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp100.000</p>
+          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp41.000</p>
         </div>
       </div>
     </div>
   );
 }
 
-function Frame22() {
-  return (
-    <div className="h-[56px] relative shrink-0 w-full">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
-          <p className="flex-[1_0_0] min-w-px relative">Biaya program promo</p>
-          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp50.000</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame23() {
-  return (
-    <div className="h-[56px] relative shrink-0 w-full">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Maison_Neue_APP:Book',sans-serif] gap-[8px] items-center leading-[16px] not-italic px-[12px] py-[16px] relative size-full text-[#4c4c4c] text-[13px]">
-          <p className="flex-[1_0_0] min-w-px relative">Promo yang ditanggung mitra usaha</p>
-          <p className="relative shrink-0 text-right whitespace-nowrap">- Rp100.000</p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function RincianBiaya() {
   return (
@@ -443,34 +418,6 @@ function RincianBiaya() {
         </div>
       </div>
       <Frame20 />
-      <div className="h-px relative shrink-0 w-full" data-name="divider">
-        <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
-            <div className="flex-[1_0_0] h-0 min-w-px relative" data-name="dotted_divider">
-              <div className="absolute inset-[-0.5px_-0.16%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 317 1">
-                  <path d="M0.5 0.5H316.5" id="dotted_divider" stroke="var(--stroke-0, #E7E7E7)" strokeDasharray="2 2" strokeLinecap="square" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Frame22 />
-      <div className="h-px relative shrink-0 w-full" data-name="divider">
-        <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex items-center justify-center pl-[12px] relative size-full">
-            <div className="flex-[1_0_0] h-0 min-w-px relative" data-name="dotted_divider">
-              <div className="absolute inset-[-0.5px_-0.16%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 317 1">
-                  <path d="M0.5 0.5H316.5" id="dotted_divider" stroke="var(--stroke-0, #E7E7E7)" strokeDasharray="2 2" strokeLinecap="square" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Frame23 />
     </div>
   );
 }
